@@ -2,7 +2,7 @@ name: Daily News Bot
 
 on:
   schedule:
-    - cron: '41 7 * * *'  # Run every day at 1:08 PM IST (UTC+5:30)
+    - cron: '46 7 * * *'  # Run every day at 1:08 PM IST (UTC+5:30)
 
 jobs:
   fetch_and_send_news:
@@ -23,7 +23,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Python script
-        run: python path/to/your/telegram_bot.py
+        run: python telegram_bot.py
         env:
           YOUR_BOT_TOKEN: ${{ secrets.YOUR_BOT_TOKEN }}
           YOUR_API_KEY: ${{ secrets.YOUR_API_KEY }}
