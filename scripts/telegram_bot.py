@@ -58,12 +58,4 @@ bot = telepot.Bot(TOKEN)
 # Send news when the bot starts
 send_news_on_start(NEWS_API_KEY, TARGET_CHAT_ID)
 
-# Set up the message loop to handle incoming messages
-MessageLoop(bot, lambda _: None).run_as_thread()
 
-print('Listening for messages...')
-
-# Keep the program running
-while True:
-    time.sleep(5)  # Sleep to avoid high CPU usage while idle
-    break
