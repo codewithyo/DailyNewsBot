@@ -1,0 +1,30 @@
+name: Daily News Bot
+
+on:
+  schedule:
+    - cron: '38 10 * * *'  # Run every day at 1:08 PM IST (UTC+5:30)
+
+jobs:
+  fetch_and_send_news:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Python script
+        run: python path/to/your/telegram_bot.py
+        env:
+          YOUR_BOT_TOKEN: ${{ secrets.YOUR_BOT_TOKEN }}
+          YOUR_API_KEY: ${{ secrets.YOUR_API_KEY }}
+          TARGET_CHAT_ID: ${{ secrets.TARGET_CHAT_ID }}
