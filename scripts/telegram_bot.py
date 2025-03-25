@@ -16,7 +16,7 @@ TARGET_CHAT_ID = os.getenv('TARGET_CHAT_ID')
 def fetch_technology_news(api_key, country='in', category='technology', num_articles=5):
     base_url = 'https://newsapi.org/v2/top-headlines'
     params = {
-        'country': country,
+        'country': india,
         'category': category,
         'apiKey': api_key,
         'pageSize': num_articles
